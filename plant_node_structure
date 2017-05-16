@@ -1,0 +1,245 @@
+object(stdClass)#67 (32) {
+  ["vid"]=>
+  string(2) "24"
+  ["uid"]=>
+  string(1) "1"
+  ["title"]=>
+  string(17) "My Beautiful Rose"
+  ["log"]=>
+  string(0) ""
+  ["status"]=>
+  string(1) "1"
+  ["comment"]=>
+  string(1) "2"
+  ["promote"]=>
+  string(1) "0"
+  ["sticky"]=>
+  string(1) "0"
+  ["vuuid"]=>
+  string(36) "8b97bd08-d85e-4fe3-9cdb-d36188adf1e4"
+  ["nid"]=>
+  string(2) "24"
+  ["type"]=>
+  string(5) "plant"
+  ["language"]=>
+  string(3) "und"
+  ["created"]=>
+  string(10) "1494957665"
+  ["changed"]=>
+  string(10) "1494957665"
+  ["tnid"]=>
+  string(1) "0"
+  ["translate"]=>
+  string(1) "0"
+  ["uuid"]=>
+  string(36) "3eb99dc2-ab23-4363-8082-0c4dd24e649c"
+  ["revision_timestamp"]=>
+  string(10) "1494957665"
+  ["revision_uid"]=>
+  string(1) "1"
+  ["field_latin_name"]=>
+  array(1) {
+    ["und"]=>
+    array(1) {
+      [0]=>
+      array(3) {
+        ["value"]=>
+        string(4) "Rosa"
+        ["format"]=>
+        NULL
+        ["safe_value"]=>
+        string(4) "Rosa"
+      }
+    }
+  }
+  ["field_description"]=>
+  array(1) {
+    ["und"]=>
+    array(1) {
+      [0]=>
+      array(3) {
+        ["value"]=>
+        string(15) "Ain't it Purty?"
+        ["format"]=>
+        NULL
+        ["safe_value"]=>
+        string(20) "Ain't it Purty?"
+      }
+    }
+  }
+  ["field_picture"]=>
+  array(1) {
+    ["und"]=>
+    array(1) {
+      [0]=>
+      array(14) {
+        ["fid"]=>
+        string(1) "6"
+        ["uid"]=>
+        string(1) "1"
+        ["filename"]=>
+        string(10) "a rose.jpg"
+        ["uri"]=>
+        string(19) "public://a rose.jpg"
+        ["filemime"]=>
+        string(10) "image/jpeg"
+        ["filesize"]=>
+        string(5) "19502"
+        ["status"]=>
+        string(1) "1"
+        ["timestamp"]=>
+        string(10) "1494957665"
+        ["uuid"]=>
+        string(36) "d7627662-cdd1-48e0-9b8a-00f7bb2b11e2"
+        ["rdf_mapping"]=>
+        array(0) {
+        }
+        ["alt"]=>
+        string(0) ""
+        ["title"]=>
+        string(0) ""
+        ["width"]=>
+        string(3) "300"
+        ["height"]=>
+        string(3) "286"
+      }
+    }
+  }
+  ["field_garden_reference"]=>
+  array(1) {
+    ["und"]=>
+    array(1) {
+      [0]=>
+      array(1) {
+        ["target_id"]=>
+        string(2) "13"
+      }
+    }
+  }
+  ["rdf_mapping"]=>
+  array(9) {
+    ["rdftype"]=>
+    array(2) {
+      [0]=>
+      string(9) "sioc:Item"
+      [1]=>
+      string(13) "foaf:Document"
+    }
+    ["title"]=>
+    array(1) {
+      ["predicates"]=>
+      array(1) {
+        [0]=>
+        string(8) "dc:title"
+      }
+    }
+    ["created"]=>
+    array(3) {
+      ["predicates"]=>
+      array(2) {
+        [0]=>
+        string(7) "dc:date"
+        [1]=>
+        string(10) "dc:created"
+      }
+      ["datatype"]=>
+      string(12) "xsd:dateTime"
+      ["callback"]=>
+      string(12) "date_iso8601"
+    }
+    ["changed"]=>
+    array(3) {
+      ["predicates"]=>
+      array(1) {
+        [0]=>
+        string(11) "dc:modified"
+      }
+      ["datatype"]=>
+      string(12) "xsd:dateTime"
+      ["callback"]=>
+      string(12) "date_iso8601"
+    }
+    ["body"]=>
+    array(1) {
+      ["predicates"]=>
+      array(1) {
+        [0]=>
+        string(15) "content:encoded"
+      }
+    }
+    ["uid"]=>
+    array(2) {
+      ["predicates"]=>
+      array(1) {
+        [0]=>
+        string(16) "sioc:has_creator"
+      }
+      ["type"]=>
+      string(3) "rel"
+    }
+    ["name"]=>
+    array(1) {
+      ["predicates"]=>
+      array(1) {
+        [0]=>
+        string(9) "foaf:name"
+      }
+    }
+    ["comment_count"]=>
+    array(2) {
+      ["predicates"]=>
+      array(1) {
+        [0]=>
+        string(16) "sioc:num_replies"
+      }
+      ["datatype"]=>
+      string(11) "xsd:integer"
+    }
+    ["last_activity"]=>
+    array(3) {
+      ["predicates"]=>
+      array(1) {
+        [0]=>
+        string(23) "sioc:last_activity_date"
+      }
+      ["datatype"]=>
+      string(12) "xsd:dateTime"
+      ["callback"]=>
+      string(12) "date_iso8601"
+    }
+  }
+  ["cid"]=>
+  string(1) "0"
+  ["last_comment_timestamp"]=>
+  string(10) "1494957665"
+  ["last_comment_name"]=>
+  NULL
+  ["last_comment_uid"]=>
+  string(1) "1"
+  ["comment_count"]=>
+  string(1) "0"
+  ["name"]=>
+  string(8) "ccbpeden"
+  ["picture"]=>
+  string(1) "0"
+  ["data"]=>
+  string(4) "b:0;"
+}
+
+
+array(1) {
+  [13]=> object(stdClass)#70 (30)
+  {
+    ["vid"]=> string(2) "13"
+    ["uid"]=> string(1) "1"
+    ["title"]=> string(10) "It's Mine!"
+    ["log"]=> string(0) ""
+    ["status"]=> string(1) "1"
+    ["comment"]=> string(1) "2"
+    ["promote"]=> string(1) "0"
+    ["sticky"]=> string(1) "0"
+    ["vuuid"]=> string(36) "40adef5d-253d-4134-85a7-a49d79aba9c8" ["nid"]=> string(2) "13"
+    ["type"]=> string(6) "garden"
+    ["language"]=> string(3) "und"
+    ["created"]=> string(10) "1494872687"
+    ["changed"]=> string(10) "1494872687" ["tnid"]=> string(1) "0" ["translate"]=> string(1) "0" ["uuid"]=> string(36) "7509842d-e974-4f23-bfa8-fbb46cb2268e" ["revision_timestamp"]=> string(10) "1494872687" ["revision_uid"]=> string(1) "1" ["field_hardiness_zone"]=> array(1) { ["und"]=> array(1) { [0]=> array(1) { ["target_id"]=> string(1) "3" } } } ["field_garden_calendar"]=> array(0) { } ["rdf_mapping"]=> array(9) { ["rdftype"]=> array(2) { [0]=> string(9) "sioc:Item" [1]=> string(13) "foaf:Document" } ["title"]=> array(1) { ["predicates"]=> array(1) { [0]=> string(8) "dc:title" } } ["created"]=> array(3) { ["predicates"]=> array(2) { [0]=> string(7) "dc:date" [1]=> string(10) "dc:created" } ["datatype"]=> string(12) "xsd:dateTime" ["callback"]=> string(12) "date_iso8601" } ["changed"]=> array(3) { ["predicates"]=> array(1) { [0]=> string(11) "dc:modified" } ["datatype"]=> string(12) "xsd:dateTime" ["callback"]=> string(12) "date_iso8601" } ["body"]=> array(1) { ["predicates"]=> array(1) { [0]=> string(15) "content:encoded" } } ["uid"]=> array(2) { ["predicates"]=> array(1) { [0]=> string(16) "sioc:has_creator" } ["type"]=> string(3) "rel" } ["name"]=> array(1) { ["predicates"]=> array(1) { [0]=> string(9) "foaf:name" } } ["comment_count"]=> array(2) { ["predicates"]=> array(1) { [0]=> string(16) "sioc:num_replies" } ["datatype"]=> string(11) "xsd:integer" } ["last_activity"]=> array(3) { ["predicates"]=> array(1) { [0]=> string(23) "sioc:last_activity_date" } ["datatype"]=> string(12) "xsd:dateTime" ["callback"]=> string(12) "date_iso8601" } } ["cid"]=> string(1) "0" ["last_comment_timestamp"]=> string(10) "1494872687" ["last_comment_name"]=> NULL ["last_comment_uid"]=> string(1) "1" ["comment_count"]=> string(1) "0" ["name"]=> string(8) "ccbpeden" ["picture"]=> string(1) "0" ["data"]=> string(4) "b:0;" } }

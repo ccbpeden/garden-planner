@@ -1,0 +1,5 @@
+name = Garden Event Creator
+description = A form to create the different events related to a plant
+package = Growth Schedule
+core = 7.x
+files[] = eventcreator.module
