@@ -55,6 +55,7 @@ function plant_form() {
   $form['planting_date'] = array(
     '#title' => 'When should it be planted?',
     '#type' => 'date',
+    '#default_value' => NULL,
     '#required' => TRUE,
   );
   $form['bloom_date_start'] = array(
@@ -94,9 +95,10 @@ function plant_form_submit($form, &$form_state) {
   $latin_name = $form_state['values']['latin_name'];
   $description = $form_state['values']['description'];
   $garden = $form_state['values']['garden_select'];
-  $image = file_load($form_state['values']['image']);
-  $image->status = FILE_STATUS_PERMANENT;
-  file_save($image);
+  $image = $form_state['storage']['image'];
+  $file = file_load($image);
+  $file->status = FILE_STATUS_PERMANENT;
+  file_save($file);
   $planting_date_array = $form_state['values']['planting_date'];
   $planting_date = $planting_date_array['year'].'-'.$planting_date_array['month'].'-'.$planting_date_array['day'].' 00:00:00';
 
@@ -144,8 +146,62 @@ function plant_form_submit($form, &$form_state) {
   $planting->field_planting_date[$planting->language][0]["timezone_db"] = "America/Los_Angeles";
   $planting->field_planting_date[$planting->language][0]["date_type"] = "datetime";
   $planting->field_planting_reference[$planting->language][0]['target_id'] = $plant->nid;
-
+  $planting = node_submit($planting);
   node_save($planting);
+
+  //Create Bloom node
+  $bloom = new stdClass();
+  $bloom->type = 'bloom_time';
+  node_object_prepare($bloom);
+  $bloom->title = $name;
+  $bloom->language = LANGUAGE_NONE;
+  $bloom->uid = $user->uid;
+  $bloom->status = 1;
+  $bloom->field_referenced_plant[$bloom->language][0]['target_id'] = $plant->nid;
+  $bloom->field_bloom_time[$bloom->language][0]['value'] = $bloom_date_start;
+  $bloom->field_bloom_time[$bloom->language][0]['value2'] = $bloom_date_finish;
+  $bloom->field_bloom_time[$bloom->language][0]["timezone"] = "America/Los_Angeles";
+  $bloom->field_bloom_time[$bloom->language][0]["timezone_db"] = "America/Los_Angeles";
+  $bloom->field_bloom_time[$bloom->language][0]["date_type"] = "datetime";
+  $bloom = node_submit($bloom);
+  node_save($bloom);
+
+
+  //Create Harvest node if harvest dates exist
+
+  $harvest = new stdClass();
+  $harvest->type = 'harvest_time';
+  node_object_prepare($harvest);
+  $harvest->title = $name;
+  $harvest->language = LANGUAGE_NONE;
+  $harvest->uid = $user->uid;
+  $harvest->status = 1;
+  $harvest->field_plant_reference[$harvest->language][0]['target_id'] = $plant->nid;
+  $harvest->field_harvest_time[$harvest->language][0]['value'] = $harvest_date_start;
+  $harvest->field_harvest_time[$harvest->language][0]['value2'] = $harvest_date_end;
+  $harvest->field_harvest_time[$harvest->language][0]["timezone"] = "America/Los_Angeles";
+  $harvest->field_harvest_time[$harvest->language][0]["timezone_db"] = "America/Los_Angeles";
+  $harvest->field_harvest_time[$harvest->language][0]["date_type"] = "datetime";
+  $harvest = node_submit($harvest);
+  node_save($harvest);
+
+  //Create Prune node if prune date exists
+
+  $prune = new stdClass();
+  $prune->type = 'prune_divide_time';
+  node_object_prepare($prune);
+  $prune->title = $name;
+  $prune->language = LANGUAGE_NONE;
+  $prune->uid = $user->uid;
+  $prune->status = 1;
+  $prune->field_referred_plant[$prune->language][0]['target_id'] = $plant->nid;
+  $prune->field_prune_time[$prune->language][0]['value'] = $prune_date_start;
+  $prune->field_prune_time[$prune->language][0]['value2'] = $prune_date_end;
+  $prune->field_prune_time[$prune->language][0]["timezone"] = "America/Los_Angeles";
+  $prune->field_prune_time[$prune->language][0]["timezone_db"] = "America/Los_Angeles";
+  $prune->field_prune_time[$prune->language][0]["date_type"] = "datetime";
+  $prune = node_submit($prune);
+  node_save($prune);
 
 
   // $node->field_unique_date[$node->language][0]["timezone"] = "America/Los_Angeles";
