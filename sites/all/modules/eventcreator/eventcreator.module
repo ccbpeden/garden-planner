@@ -204,6 +204,7 @@
     $planting->field_content_date[$planting->language][0]["timezone_db"] = "America/Los_Angeles";
     $planting->field_content_date[$planting->language][0]["date_type"] = "datetime";
     $planting->field_referenced_plant[$planting->language][0]['target_id'] = $plant->nid;
+    $planting->field_garden_reference[$plant->language][0]['target_id'] = $garden;
     $planting = node_submit($planting);
     node_save($planting);
 
@@ -217,6 +218,7 @@
       $bloom->uid = $user->uid;
       $bloom->status = 1;
       $bloom->field_referenced_plant[$bloom->language][0]['target_id'] = $plant->nid;
+      $bloom->field_garden_reference[$plant->language][0]['target_id'] = $garden;
       $bloom->field_content_date[$bloom->language][0]['value'] = $bloom_date_start;
       if($bloom_date_finish != null){
         $bloom->field_content_date[$bloom->language][0]['value2'] = $bloom_date_finish;
@@ -239,6 +241,7 @@
       $harvest->uid = $user->uid;
       $harvest->status = 1;
       $harvest->field_referenced_plant[$harvest->language][0]['target_id'] = $plant->nid;
+      $harvest->field_garden_reference[$plant->language][0]['target_id'] = $garden;
       $harvest->field_content_date[$harvest->language][0]['value'] = $harvest_date_start;
       if($harvest_date_end != null){
         $harvest->field_content_date[$harvest->language][0]['value2'] = $harvest_date_end;
@@ -259,6 +262,7 @@
       $prune->language = LANGUAGE_NONE;
       $prune->uid = $user->uid;
       $prune->status = 1;
+      $prune->field_garden_reference[$plant->language][0]['target_id'] = $garden;
       $prune->field_referenced_plant[$prune->language][0]['target_id'] = $plant->nid;
       $prune->field_content_date[$prune->language][0]['value'] = $prune_date_start;
       if($prune_date_end != null){
