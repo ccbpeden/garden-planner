@@ -4,14 +4,14 @@
       'title' => 'Add a plant!',
       'page callback' => 'drupal_get_form',
       'page arguments' =>array('plant_form'),
-      'access callback' => TRUE,
+      'access callback' => 'user_is_logged_in',
       'type' => MENU_NORMAL_ITEM,
     );
     $items['make_garden'] = array(
       'title' => 'Make a new garden!',
       'page callback' => 'drupal_get_form',
       'page arguments' => array('garden_form'),
-      'access callback' => TRUE,
+      'access callback' => 'user_is_logged_in',
       'type' => MENU_NORMAL_ITEM,
     );
     return $items;
@@ -342,7 +342,9 @@
     $garden->uid = $user->uid;
     $garden->title = $garden_name;
     $garden->field_hardiness_zone[$garden->language][0]['target_id'] = $h_zone;
-    $garden->field_garden_image[$garden->language][0]['fid'] = $file->fid;
+    if($form_state['values']['image']){
+      $garden->field_garden_image[$garden->language][0]['fid'] = $file->fid;
+    }
     $garden = node_submit($garden);
     node_save($garden);
   }
