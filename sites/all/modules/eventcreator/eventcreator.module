@@ -199,11 +199,11 @@
     $planting->language = LANGUAGE_NONE;
     $planting->uid = $user->uid;
     $planting->status = 1;
-    $planting->field_planting_date[$planting->language][0]['value'] = $planting_date;
-    $planting->field_planting_date[$planting->language][0]["timezone"] = "America/Los_Angeles";
-    $planting->field_planting_date[$planting->language][0]["timezone_db"] = "America/Los_Angeles";
-    $planting->field_planting_date[$planting->language][0]["date_type"] = "datetime";
-    $planting->field_planting_reference[$planting->language][0]['target_id'] = $plant->nid;
+    $planting->field_content_date[$planting->language][0]['value'] = $planting_date;
+    $planting->field_content_date[$planting->language][0]["timezone"] = "America/Los_Angeles";
+    $planting->field_content_date[$planting->language][0]["timezone_db"] = "America/Los_Angeles";
+    $planting->field_content_date[$planting->language][0]["date_type"] = "datetime";
+    $planting->field_referenced_plant[$planting->language][0]['target_id'] = $plant->nid;
     $planting = node_submit($planting);
     node_save($planting);
 
@@ -217,13 +217,13 @@
       $bloom->uid = $user->uid;
       $bloom->status = 1;
       $bloom->field_referenced_plant[$bloom->language][0]['target_id'] = $plant->nid;
-      $bloom->field_bloom_time[$bloom->language][0]['value'] = $bloom_date_start;
+      $bloom->field_content_date[$bloom->language][0]['value'] = $bloom_date_start;
       if($bloom_date_finish != null){
-        $bloom->field_bloom_time[$bloom->language][0]['value2'] = $bloom_date_finish;
+        $bloom->field_content_date[$bloom->language][0]['value2'] = $bloom_date_finish;
       }
-      $bloom->field_bloom_time[$bloom->language][0]["timezone"] = "America/Los_Angeles";
-      $bloom->field_bloom_time[$bloom->language][0]["timezone_db"] = "America/Los_Angeles";
-      $bloom->field_bloom_time[$bloom->language][0]["date_type"] = "datetime";
+      $bloom->field_content_date[$bloom->language][0]["timezone"] = "America/Los_Angeles";
+      $bloom->field_content_date[$bloom->language][0]["timezone_db"] = "America/Los_Angeles";
+      $bloom->field_content_date[$bloom->language][0]["date_type"] = "datetime";
       $bloom = node_submit($bloom);
       node_save($bloom);
     }
@@ -238,14 +238,14 @@
       $harvest->language = LANGUAGE_NONE;
       $harvest->uid = $user->uid;
       $harvest->status = 1;
-      $harvest->field_plant_reference[$harvest->language][0]['target_id'] = $plant->nid;
-      $harvest->field_harvest_time[$harvest->language][0]['value'] = $harvest_date_start;
+      $harvest->field_referenced_plant[$harvest->language][0]['target_id'] = $plant->nid;
+      $harvest->field_content_date[$harvest->language][0]['value'] = $harvest_date_start;
       if($harvest_date_end != null){
-        $harvest->field_harvest_time[$harvest->language][0]['value2'] = $harvest_date_end;
+        $harvest->field_content_date[$harvest->language][0]['value2'] = $harvest_date_end;
       }
-      $harvest->field_harvest_time[$harvest->language][0]["timezone"] = "America/Los_Angeles";
-      $harvest->field_harvest_time[$harvest->language][0]["timezone_db"] = "America/Los_Angeles";
-      $harvest->field_harvest_time[$harvest->language][0]["date_type"] = "datetime";
+      $harvest->field_content_date[$harvest->language][0]["timezone"] = "America/Los_Angeles";
+      $harvest->field_content_date[$harvest->language][0]["timezone_db"] = "America/Los_Angeles";
+      $harvest->field_content_date[$harvest->language][0]["date_type"] = "datetime";
       $harvest = node_submit($harvest);
       node_save($harvest);
     }
@@ -259,14 +259,14 @@
       $prune->language = LANGUAGE_NONE;
       $prune->uid = $user->uid;
       $prune->status = 1;
-      $prune->field_referred_plant[$prune->language][0]['target_id'] = $plant->nid;
-      $prune->field_prune_time[$prune->language][0]['value'] = $prune_date_start;
+      $prune->field_referenced_plant[$prune->language][0]['target_id'] = $plant->nid;
+      $prune->field_content_date[$prune->language][0]['value'] = $prune_date_start;
       if($prune_date_end != null){
-        $prune->field_prune_time[$prune->language][0]['value2'] = $prune_date_end;
+        $prune->field_content_date[$prune->language][0]['value2'] = $prune_date_end;
       }
-      $prune->field_prune_time[$prune->language][0]["timezone"] = "America/Los_Angeles";
-      $prune->field_prune_time[$prune->language][0]["timezone_db"] = "America/Los_Angeles";
-      $prune->field_prune_time[$prune->language][0]["date_type"] = "datetime";
+      $prune->field_content_date[$prune->language][0]["timezone"] = "America/Los_Angeles";
+      $prune->field_content_date[$prune->language][0]["timezone_db"] = "America/Los_Angeles";
+      $prune->field_content_date[$prune->language][0]["date_type"] = "datetime";
       $prune = node_submit($prune);
       node_save($prune);
     }
